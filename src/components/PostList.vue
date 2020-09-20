@@ -17,7 +17,7 @@
                     <span :class="[{put_good:(item.good == true),
                     put_top:(item.top== true),
                     topiclisttab:(item.good!=true && item.top !=true)}]">{{item | tabFormatter}}</span>
-                    <router-link :to="{name:'post_content',params:{id:item.id}}">
+                    <router-link :to="{name:'post_content',params:{id:item.id,name:item.author.loginname}}">
                     <span>{{item.title}}</span>
                     </router-link>
                     <span>{{item.last_reply_at | dateFormatter}}</span>

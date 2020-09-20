@@ -58,9 +58,14 @@ export default {
   beforeMount() {
     this.getArticleData();
   },
+  watch:{
+      '$route'(){
+          this.getArticleData()
+      }
+  }
 };
 </script>
 
 <style>
-@import url('../assets/markdown-github.css');
+
 </style>
