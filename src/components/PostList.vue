@@ -1,5 +1,4 @@
 <template>
-    <div>
         <div>
             <ul>
                 <li>
@@ -18,12 +17,13 @@
                     <span :class="[{put_good:(item.good == true),
                     put_top:(item.top== true),
                     topiclisttab:(item.good!=true && item.top !=true)}]">{{item | tabFormatter}}</span>
+                    <router-link :to="{name:'post_content',params:{id:item.id}}">
                     <span>{{item.title}}</span>
+                    </router-link>
                     <span>{{item.last_reply_at | dateFormatter}}</span>
                 </li>
             </ul>
         </div>
-    </div>
 </template>
 
 <script>
