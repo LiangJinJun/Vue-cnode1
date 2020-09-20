@@ -10,10 +10,10 @@
       </ul>
       <div v-html="post.content" class="topic_content"></div>
     </div>
-    <div>
+    <div id="reply">
         <div>回复</div>
         <div v-for="(reply,index) in post.replies" :key="index">
-            <router-link >
+            <router-link :to="{name:'user_info',params:{name:reply.author.loginname}}">
             <img :src="reply.author.avatar_url" alt="">
             </router-link>
             <router-link>
@@ -23,7 +23,7 @@
                 {{index+1}}楼
             </span>
             <span v-if="reply.ups.length>0" class=""> 
-                {{reply.ups.length}}
+                ↑   {{reply.ups.length}}
             </span>
             <span v-else>
 
