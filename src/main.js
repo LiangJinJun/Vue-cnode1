@@ -7,7 +7,7 @@ import Axios from 'axios'
 
 Vue.prototype.$http = Axios
 Vue.config.productionTip = false
-Vue.filter('dateFormatter',function(i){
+Vue.filter('formatData',function(i){
   const date = new Date(i)
   const time = new Date().getTime()-date.getTime()
   if((time/1000)<30){
